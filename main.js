@@ -6,6 +6,7 @@ class Klijent {
     this.brojRacuna = ++brojac;
     this.stanje = stanje;
   }
+
   prenetiSredstva(primalac, iznos) {
     if (this.stanje >= iznos) {
       this.stanje -= iznos;
