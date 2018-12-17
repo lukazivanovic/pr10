@@ -15,23 +15,28 @@ class Figura {
       console.log("Igrac " + this.ime + " (HP " + this.hp + ") sa oruzjem " + this.oruzje + " napada igraca " + protivnik.ime + " (HP " + protivnik.hp + ")");
       console.log("Bacanje kocke...... " + kocka);
       console.log("napad: " + dmg + " DMG");
-      console.log("protiv napad: " + ca + " DMG");
       protivnik.hp -= iznos;
-      this.hp -= ca;
+      if (protivnik.hp <= 0) {
+        console.log("Protivnik je porazen.");
+      } else {
+        console.log("protiv napad: " + ca + " DMG");
+        this.hp -= ca;
+        if (this.hp <= 0) console.log("Protivnik je pobedio.");
+      }
     }
   }
 }
 
 class Oruzje {
-  constructor() {
+  constructor(ime, atk) {
     this.ime = ime;
     this.atk = atk;
   }
 }
 
 const noz = new Oruzje("noz", 2);
-const stap = new Oruzje("stap", 3);
-const mac = new Oruzje("mac", 5);
+const stap = new Oruzje("stap", 5);
+const mac = new Oruzje("mac", 4);
 
 const priest = new Figura("MMNK", stap, 200);
 const thief = new Figura("NINJ", noz, 300);
