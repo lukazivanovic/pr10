@@ -15,7 +15,7 @@ class Figura {
       console.log("Igrac " + this.ime + " (HP " + this.hp + ") sa oruzjem " + this.oruzje + " napada igraca " + protivnik.ime + " (HP " + protivnik.hp + ")");
       console.log("Bacanje kocke...... " + kocka);
       console.log("napad: " + dmg + " DMG");
-      protivnik.hp -= iznos;
+      protivnik.hp -= dmg;
       if (protivnik.hp <= 0) {
         console.log("Protivnik je porazen.");
       } else {
